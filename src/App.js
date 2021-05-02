@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import './App.css';
 import SignIn from './components/SignIn'
 
@@ -55,8 +55,9 @@ const ChatRoom = () => {
   const query = messagesRef.orderBy('createdAt').limit(25)
 
   const [messages] = useCollectionData(query, { idField: 'id' })
-
   const [formValue, setFormValue] = useState('')
+
+  const dummy = useRef()
 
   const sendMessage = async (e) => {
     e.preventDefault()
@@ -71,15 +72,17 @@ const ChatRoom = () => {
     })
 
     setFormValue('')
+    dummy.current.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
     <>
       <h1>Chat Room</h1>
       <SignOut />
-      <div>
+      <main>
         {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
-      </div>
+        <div ref={dummy}></div>
+      </main>
 
       <form onSubmit={sendMessage}>
         <input value={formValue} onChange={e => setFormValue(e.target.value)} />
