@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react'
 import './App.css';
 import SignIn from './components/SignIn'
+import ChatRoom from './components/ChatRoom/ChatRoom'
 
 
 import firebase from 'firebase/app';
@@ -29,68 +30,13 @@ const signInWithGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider()
   auth.signInWithPopup(provider)
 }
+
 const SignOut = () => (
   auth.currentUser && (
     <button onClick={() => auth.signOut()}>Sign Out</button>
   )
 )
 
-function ChatMessage(props) {
-  const { text, uid, photoURL } = props.message
-
-  const messageClass = uid === auth.currentUser.id ? 'sent' : 'received'
-
-  return (
-    <div className={`message ${messageClass}`}>
-      <img src={photoURL} alt='user' />
-      <p>message: {text}</p>
-    </div>
-  )
-}
-
-
-
-const ChatRoom = () => {
-  const messagesRef = firestore.collection('messages')
-  const query = messagesRef.orderBy('createdAt').limit(25)
-
-  const [messages] = useCollectionData(query, { idField: 'id' })
-  const [formValue, setFormValue] = useState('')
-
-  const dummy = useRef()
-
-  const sendMessage = async (e) => {
-    e.preventDefault()
-
-    const { uid, photoURL } = auth.currentUser
-
-    await messagesRef.add({
-      text: formValue,
-      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-      uid,
-      photoURL
-    })
-
-    setFormValue('')
-    dummy.current.scrollIntoView({ behavior: 'smooth' })
-  }
-
-  return (
-    <>
-      <h1>Chat Room</h1>
-      <SignOut />
-      <main>
-        {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
-        <div ref={dummy}></div>
-      </main>
-
-      <form onSubmit={sendMessage}>
-        <input value={formValue} onChange={e => setFormValue(e.target.value)} />
-        <button type="submit">Send</button>
-      </form>
-    </>
-  )
-}
 
 function App() {
 
@@ -102,7 +48,7 @@ function App() {
 
       </header>
       <section>
-        {user ? <ChatRoom /> : <SignIn signInWithGoogle={signInWithGoogle} />}
+        {user ? <ChatRoom firebase={firebase} firestore={firestore} auth={auth} SignOut={SignOut} /> : <SignIn signInWithGoogle={signInWithGoogle} />}
 
       </section>
     </div>
