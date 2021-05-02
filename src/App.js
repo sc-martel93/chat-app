@@ -1,6 +1,6 @@
 import './App.css';
 import SignIn from './components/SignIn'
-import ChatRoom from './components/ChatRoom'
+
 
 import firebase from 'firebase/app';
 import 'firebase/firestore'
@@ -28,7 +28,44 @@ const signInWithGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider()
   auth.signInWithPopup(provider)
 }
+const SignOut = () => (
+  auth.currentUser && (
+    <button onClick={() => auth.signOut()}>Sign Out</button>
+  )
+)
+
+function ChatMessage(props) {
+  const { text, uid } = props.message
+
+  return (
+    <>
+      <p>message: {text}</p>
+    </>
+  )
+}
+
+const ChatRoom = () => {
+  const messagesRef = firestore.collection('messages')
+  const query = messagesRef.orderBy('createdAt').limit(25)
+
+  const [messages] = useCollectionData(query, { idField: 'id' })
+
+  console.log(messages)
+  return (
+    <>
+      <h1>Chat Room</h1>
+      <SignOut />
+      <div>
+        {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
+      </div>
+    </>
+  )
+}
+
 function App() {
+
+  const [user] = useAuthState(auth)
+
   return (
     <div className="App">
       <header>
@@ -36,6 +73,7 @@ function App() {
       </header>
       <section>
         {user ? <ChatRoom /> : <SignIn signInWithGoogle={signInWithGoogle} />}
+
       </section>
     </div>
   );
