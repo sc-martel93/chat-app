@@ -1,9 +1,9 @@
 import React from 'react'
 
-const SignIn = () => {
+const SignIn = ({ signInWithGoogle }) => {
     return (
         <div>
-            sign in
+            <button onClick={signInWithGoogle}>Sign in with Google</button>
         </div>
     )
 }

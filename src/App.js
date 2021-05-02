@@ -24,6 +24,10 @@ firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth()
 const firestore = firebase.firestore()
 
+const signInWithGoogle = () => {
+  const provider = new firebase.auth.GoogleAuthProvider()
+  auth.signInWithPopup(provider)
+}
 function App() {
   return (
     <div className="App">
@@ -31,7 +35,7 @@ function App() {
 
       </header>
       <section>
-        {user ? <ChatRoom /> : <SignIn />}
+        {user ? <ChatRoom /> : <SignIn signInWithGoogle={signInWithGoogle} />}
       </section>
     </div>
   );
