@@ -1,5 +1,6 @@
 import './App.css';
-
+import SignIn from './components/SignIn'
+import ChatRoom from './components/ChatRoom'
 
 import firebase from 'firebase/app';
 import 'firebase/firestore'
@@ -30,7 +31,7 @@ function App() {
 
       </header>
       <section>
-
+        {user ? <ChatRoom /> : <SignIn />}
       </section>
     </div>
   );
