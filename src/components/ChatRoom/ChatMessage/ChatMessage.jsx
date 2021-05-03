@@ -6,11 +6,19 @@ const ChatMessage = ({ message, auth }) => {
 
     let messageClass = uid === auth.currentUser.uid ? 'sent' : 'received'
 
+    let date = message.createdAt && message.createdAt.toDate();
+
     return (
-        <div className={`message ${messageClass}`}>
-            <img src={photoURL} alt='user' />
-            <p>{text}</p>
-        </div>
+        <>
+            <div className={`message ${messageClass}`}>
+                <img src={photoURL} alt='user' />
+                <p>{text}</p>
+
+            </div>
+            <div className="timeStamp">
+                {date && date.toLocaleString()}
+            </div>
+        </>
     )
 }
 

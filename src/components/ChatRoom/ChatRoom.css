@@ -81,6 +81,7 @@ button {
 button:focus,
 button:hover {
     background-color: rgba(79, 32, 207, 0.65);
+    color: yellow;
 }
 
 
