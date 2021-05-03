@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
 
-import ChatMessage from './ChatMessage'
+import ChatMessage from './ChatMessage/ChatMessage'
 
 const ChatRoom = ({ firebase, firestore, auth }) => {
     const messagesRef = firestore.collection('messages')

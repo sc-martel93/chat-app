@@ -1,10 +1,10 @@
 import React from 'react'
 
-const ChatMessage = (props, { auth }) => {
-    const { text, uid, photoURL } = props.message
+const ChatMessage = ({ message, auth }) => {
+    const { text, uid, photoURL } = message
 
-    // const messageClass = uid === auth.currentUser.id ? 'sent' : 'received'
-    const messageClass = ''
+    const messageClass = uid === auth.currentUser.id ? 'sent' : 'received'
+    // const messageClass = ''
 
     return (
         <div className={`message ${messageClass}`}>
