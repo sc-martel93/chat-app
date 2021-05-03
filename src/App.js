@@ -48,7 +48,16 @@ function App() {
 
       </header>
       <section>
-        {user ? <ChatRoom firebase={firebase} firestore={firestore} auth={auth} SignOut={SignOut} /> : <SignIn signInWithGoogle={signInWithGoogle} />}
+        {user ?
+          <ChatRoom
+            firebase={firebase}
+            firestore={firestore}
+            auth={auth}
+            SignOut={SignOut}
+          />
+          : <SignIn
+            signInWithGoogle={signInWithGoogle}
+          />}
 
       </section>
     </div>
