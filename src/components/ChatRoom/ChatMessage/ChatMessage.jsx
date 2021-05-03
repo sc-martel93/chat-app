@@ -9,7 +9,7 @@ const ChatMessage = ({ message, auth }) => {
     return (
         <div className={`message ${messageClass}`}>
             <img src={photoURL} alt='user' />
-            <p>{uid}: {text}</p>
+            <p>{text}</p>
         </div>
     )
 }
