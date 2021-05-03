@@ -1,16 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './ChatMessage.css'
 
 const ChatMessage = ({ message, auth }) => {
     const { text, uid, photoURL } = message
 
-    const messageClass = uid === auth.currentUser.id ? 'sent' : 'received'
-    // const messageClass = ''
+    let messageClass = uid === auth.currentUser.uid ? 'sent' : 'received'
 
     return (
         <div className={`message ${messageClass}`}>
             <img src={photoURL} alt='user' />
-            <p>message: {text}</p>
+            <p>{uid}: {text}</p>
         </div>
     )
 }

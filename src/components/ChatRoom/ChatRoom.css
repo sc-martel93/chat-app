@@ -51,41 +51,38 @@ main::-webkit-scrollbar-thumb {
   
 
 form {
-    height: 10vh;
+    height: 6vh;
+    min-height: 40px;;
     position: fixed;
     bottom: 0;
     width: 100%;
     max-width: 728px;
     display: flex;
-    font-size: 1.5rem;
-    
+    margin-bottom: 5px;
 }
 
 input {
    width: 100%;
    padding: 0 20px 0 20px;
-   font-size: 1.1rem;
    border: 1px solid black;
-   border-radius: 15px;
-   
+   border-radius: 15px; 
 }
 
 button {
-    background-color: rgba(59, 41, 107, 0.95); /* Green */
+    background-color: rgba(59, 41, 107, 0.95);
     border: 1px solid black;
     border-radius: 15px;
     color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
     cursor: pointer;
     font-size: 1.25rem;
+ 
 }
 
+button:focus,
 button:hover {
-    background-color: rgba(59, 41, 107, 0.65);
+    background-color: rgba(79, 32, 207, 0.65);
 }
+
 
 button:disabled {
     opacity: 0.5;

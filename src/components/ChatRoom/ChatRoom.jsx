@@ -17,6 +17,7 @@ const ChatRoom = ({ firebase, firestore, auth, SignOut }) => {
         e.preventDefault()
 
         const { uid, photoURL } = auth.currentUser
+        console.log(uid)
 
         await messagesRef.add({
             text: formValue,
