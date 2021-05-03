@@ -3,7 +3,7 @@ import React from 'react'
 const SignIn = ({ signInWithGoogle }) => {
     return (
         <div>
-            <button onClick={signInWithGoogle}>Sign in with Google</button>
+            <button style={{ marginTop: '50vh' }} onClick={signInWithGoogle}>Sign in with Google</button>
         </div>
     )
 }

@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
 
 import ChatMessage from './ChatMessage/ChatMessage'
+import './ChatRoom.css'
 
 const ChatRoom = ({ firebase, firestore, auth, SignOut }) => {
     const messagesRef = firestore.collection('messages')
@@ -29,9 +30,12 @@ const ChatRoom = ({ firebase, firestore, auth, SignOut }) => {
     }
 
     return (
-        <>
-            <h1>Chat Room</h1>
-            <SignOut />
+        <div className="chatRoom">
+            <header>
+                <h1 className="chatRoom--title">Chat Room</h1>
+                <SignOut />
+            </header>
+
             <main>
                 {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} auth={auth} />)}
                 <div ref={dummy}></div>
@@ -41,7 +45,7 @@ const ChatRoom = ({ firebase, firestore, auth, SignOut }) => {
                 <input value={formValue} onChange={e => setFormValue(e.target.value)} />
                 <button type="submit">Send</button>
             </form>
-        </>
+        </div>
     )
 }
 

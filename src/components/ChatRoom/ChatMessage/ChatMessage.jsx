@@ -1,4 +1,5 @@
 import React from 'react'
+import './ChatMessage.css'
 
 const ChatMessage = ({ message, auth }) => {
     const { text, uid, photoURL } = message

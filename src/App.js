@@ -44,9 +44,6 @@ function App() {
 
   return (
     <div className="App">
-      <header>
-
-      </header>
       <section>
         {user ?
           <ChatRoom
