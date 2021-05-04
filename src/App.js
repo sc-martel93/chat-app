@@ -28,6 +28,11 @@ const signInWithGoogle = () => {
   auth.signInWithPopup(provider)
 }
 
+const signInAnon = () => {
+  const provider = new firebase.auth().signInAnonymously()
+  auth.signInWithPopup(provider)
+}
+
 function App() {
 
   const [user] = useAuthState(auth)
@@ -44,6 +49,7 @@ function App() {
           />
           : <SignIn
             signInWithGoogle={signInWithGoogle}
+            signInAnon={signInAnon}
           />}
 
       </section>
