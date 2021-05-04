@@ -22,9 +22,16 @@ header {
     padding: 10px;
     box-sizing: border-box;
   }
+  
+  .headerBtns {
+    display: flex;
+    
+
+  }
 
 .chatRoom--title {
     margin-left: 15px;
+    letter-spacing: 3px;
 }
 
 main {
@@ -76,7 +83,12 @@ button {
     padding: 15px 32px;
 }
 
-
+.signOutBtn {
+    font-size: 1rem;
+    padding: 5px 5px;
+    border-radius: 7px;
+    margin-left: 5px;
+}
 
 button:focus,
 button:hover {

@@ -20,7 +20,7 @@ const ChatRoom = ({ firebase, firestore, auth, user }) => {
 
     const SignOut = () => (
         auth.currentUser && (
-            <button onClick={() => auth.signOut()}>Sign Out</button>
+            <button className="signOutBtn" onClick={() => auth.signOut()}>Sign Out</button>
         )
     )
 
@@ -44,7 +44,11 @@ const ChatRoom = ({ firebase, firestore, auth, user }) => {
         <div className="chatRoom">
             <header>
                 <h1 className="chatRoom--title">ChatBox</h1>
-                <SignOut />
+                <div className="headerBtns">
+                    <button className="signOutBtn"><i class="fas fa-chevron-up"></i></button>
+                    <button className="signOutBtn"><i class="fas fa-chevron-down"></i></button>
+                    <SignOut />
+                </div>
             </header>
 
             <main>
