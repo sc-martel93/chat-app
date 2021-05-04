@@ -2,7 +2,6 @@ import './App.css';
 import SignIn from './components/SignIn'
 import ChatRoom from './components/ChatRoom/ChatRoom'
 
-
 import firebase from 'firebase/app';
 import 'firebase/firestore'
 import 'firebase/auth'
@@ -29,13 +28,6 @@ const signInWithGoogle = () => {
   auth.signInWithPopup(provider)
 }
 
-const SignOut = () => (
-  auth.currentUser && (
-    <button onClick={() => auth.signOut()}>Sign Out</button>
-  )
-)
-
-
 function App() {
 
   const [user] = useAuthState(auth)
@@ -48,7 +40,6 @@ function App() {
             firebase={firebase}
             firestore={firestore}
             auth={auth}
-            SignOut={SignOut}
             user={user}
           />
           : <SignIn
