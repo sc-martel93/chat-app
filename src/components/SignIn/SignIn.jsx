@@ -1,15 +1,9 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useEffect } from 'react'
 
 const SignIn = ({ signInWithGoogle }) => {
 
-    const top = useRef()
 
-    useEffect(() => {
-        if (top.current !== null)
-            top.current.scrollIntoView({ behavior: 'smooth' })
-
-        // clearTimeout()
-    }, [])
+    useEffect(() => { window.scrollTo(0, 0) }, [])
 
     const styles = {
         color: "White",
@@ -22,7 +16,6 @@ const SignIn = ({ signInWithGoogle }) => {
     }
     return (
         <div>
-            <div style={{ position: "absolute", top: "0" }} ref={top}></div>
             <h1 style={styles}>ChatBox</h1>
             <h3 style={{ color: "white" }}>Scott Martel</h3>
             <button style={{ marginTop: '20vh' }} onClick={signInWithGoogle}>Sign in with <i class="fab fa-google"></i>oogle</button>
