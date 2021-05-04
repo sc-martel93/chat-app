@@ -23,7 +23,7 @@ const ChatRoom = ({ firebase, firestore, auth, user }) => {
 
     const SignOut = () => (
         auth.currentUser && (
-            <button className="headerBtn" onClick={() => auth.signOut()}>Sign Out</button>
+            <button className="headerBtn" onClick={() => auth.signOut()}><i class="fas fa-sign-out-alt"></i></button>
         )
     )
 
