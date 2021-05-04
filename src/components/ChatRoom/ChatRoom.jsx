@@ -52,13 +52,13 @@ const ChatRoom = ({ firebase, firestore, auth, user }) => {
     return (
         <div className="chatRoom">
             <header>
-                <h1 className="chatRoom--title">ChatBox <i class="fas fa-air-freshener"></i></h1>
+                <h1 className="chatRoom--title">ChatBox <i className="fas fa-air-freshener"></i></h1>
                 <div className="headerBtns">
                     <button className="headerBtn" onClick={() => toTopOfPage()} >
-                        <i class="fas fa-chevron-up"></i>
+                        <i className="fas fa-chevron-up"></i>
                     </button>
                     <button className="headerBtn" onClick={() => toBottomOfPage()}>
-                        <i class="fas fa-chevron-down"></i>
+                        <i className="fas fa-chevron-down"></i>
                     </button>
                     <SignOut />
                 </div>
@@ -72,7 +72,7 @@ const ChatRoom = ({ firebase, firestore, auth, user }) => {
 
             <form onSubmit={sendMessage}>
                 <input value={formValue} onChange={e => setFormValue(e.target.value)} />
-                <button type="submit"><i class="fas fa-rocket"></i></button>
+                <button type="submit"><i className="fas fa-rocket"></i></button>
             </form>
         </div>
     )

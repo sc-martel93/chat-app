@@ -18,7 +18,7 @@ const SignIn = ({ signInWithGoogle }) => {
         <div>
             <h1 style={styles}>ChatBox</h1>
             <h3 style={{ color: "white" }}>Scott Martel</h3>
-            <button style={{ marginTop: '20vh' }} onClick={signInWithGoogle}>Sign in with <i class="fab fa-google"></i>oogle</button>
+            <button style={{ marginTop: '20vh' }} onClick={signInWithGoogle}>Sign in with <i className="fab fa-google"></i>oogle</button>
         </div>
     )
 }
