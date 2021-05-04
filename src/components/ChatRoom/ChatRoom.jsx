@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
 
 import ChatMessage from './ChatMessage/ChatMessage'
@@ -12,6 +12,11 @@ const ChatRoom = ({ firebase, firestore, auth, SignOut, user }) => {
     const [formValue, setFormValue] = useState('')
 
     const dummy = useRef()
+
+    useEffect(() => {
+        if (dummy.current !== null)
+            setTimeout(function () { dummy.current.scrollIntoView({ behavior: 'smooth' }) }, 1000);
+    }, [])
 
     const sendMessage = async (e) => {
         e.preventDefault()

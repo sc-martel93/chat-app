@@ -6,21 +6,20 @@ const ChatMessage = ({ message, auth, user }) => {
 
     let messageClass = uid === auth.currentUser.uid ? 'sent' : 'received'
 
-    console.log(user.displayName)
     let date = message.createdAt && message.createdAt.toDate();
 
     return (
         <div className="test">
-            <span className={`name ${messageClass}`}>{user.displayName}</span>
+            <span className={`name ${messageClass}`}>
+                {user.displayName}
+            </span>
             <div className={`message ${messageClass}`}>
                 <img src={photoURL} alt=' ><' />
                 <p>{text}</p>
             </div>
             <div className={`timeStamp ${messageClass}`}>
-
                 <span>{date && date.toDateString()}</span>
                 <span>{date && date.toLocaleTimeString()}</span>
-
             </div>
         </div >
 
