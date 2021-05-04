@@ -28,10 +28,7 @@ const signInWithGoogle = () => {
   auth.signInWithPopup(provider)
 }
 
-const signInAnon = () => {
-  const provider = new firebase.auth().signInAnonymously()
-  auth.signInWithPopup(provider)
-}
+const signInAnon = () => { firebase.auth().signInAnonymously() }
 
 function App() {
 
