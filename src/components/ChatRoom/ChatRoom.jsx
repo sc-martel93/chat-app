@@ -11,16 +11,17 @@ const ChatRoom = ({ firebase, firestore, auth, user }) => {
     const [messages] = useCollectionData(query, { idField: 'id' })
     const [formValue, setFormValue] = useState('')
 
-    const dummy = useRef()
+    const top = useRef()
+    const bottom = useRef()
 
     useEffect(() => {
-        if (dummy.current !== null)
-            setTimeout(() => { dummy.current.scrollIntoView({ behavior: 'smooth' }) }, 1000);
+        if (bottom.current !== null)
+            setTimeout(() => { bottom.current.scrollIntoView({ behavior: 'smooth' }) }, 1000);
     }, [])
 
     const SignOut = () => (
         auth.currentUser && (
-            <button className="signOutBtn" onClick={() => auth.signOut()}>Sign Out</button>
+            <button className="headerBtn" onClick={() => auth.signOut()}>Sign Out</button>
         )
     )
 
@@ -37,23 +38,31 @@ const ChatRoom = ({ firebase, firestore, auth, user }) => {
         })
 
         setFormValue('')
-        dummy.current.scrollIntoView({ behavior: 'smooth' })
+        bottom.current.scrollIntoView({ behavior: 'smooth' })
     }
+
+    const toTopOfPage = () => { top.current.scrollIntoView({ behavior: 'smooth' }) }
+    const toBottomOfPage = () => { bottom.current.scrollIntoView({ behavior: 'smooth' }) }
 
     return (
         <div className="chatRoom">
             <header>
                 <h1 className="chatRoom--title">ChatBox <i class="fas fa-air-freshener"></i></h1>
                 <div className="headerBtns">
-                    <button className="signOutBtn"><i class="fas fa-chevron-up"></i></button>
-                    <button className="signOutBtn"><i class="fas fa-chevron-down"></i></button>
+                    <button className="headerBtn" onClick={() => toTopOfPage()} >
+                        <i class="fas fa-chevron-up"></i>
+                    </button>
+                    <button className="headerBtn" onClick={() => toBottomOfPage()}>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
                     <SignOut />
                 </div>
             </header>
 
             <main>
+                <div ref={top}></div>
                 {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} auth={auth} user={user} />)}
-                <div ref={dummy}></div>
+                <div ref={bottom}></div>
             </main>
 
             <form onSubmit={sendMessage}>
