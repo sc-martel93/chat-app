@@ -42,18 +42,18 @@ main {
     flex-direction: column;
 }
 
-    /* -webkit-scrollbar{
-        width: 0.25rem;
-    }
-      
-    -webkit-scrollbar-track {
-        background: #1e1e24;
-    }
-      
-    -webkit-scrollbar-thumb {
-        background: #6649b8;
-    } */
-      
+::-webkit-scrollbar{
+    width: 0.25rem;
+}
+    
+::-webkit-scrollbar-track {
+    background: rgb(16,56,87);
+}
+    
+::-webkit-scrollbar-thumb {
+    background: rgb(62,114,152);
+}
+    
 
 form {
     position: fixed;
@@ -84,7 +84,7 @@ button {
 
 .headerBtn {
     font-size: 1rem;
-    padding: 5px 5px;
+    padding: 7px 10px;
     border-radius: 7px;
     margin-left: 10px;
 }
