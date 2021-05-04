@@ -36,7 +36,22 @@ img {
     margin: 2px 5px;
   }
 
-  .timeStamp {
-    font-size: .8rem;
-    color: white;
+
+
+ .timeStamp {
+    font-size: .7rem;
+    color: grey;
+    display: flex;
+    /* flex-direction: column; */
+   
+  }
+
+  .timeStamp.sent {
+      flex-direction: row;
+      justify-content: flex-end;
+      margin-right: 7px;
+  }
+  
+  .timeStamp span {
+      margin-left:3px;
   }

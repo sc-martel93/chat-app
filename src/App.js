@@ -1,4 +1,3 @@
-import { useState, useRef } from 'react'
 import './App.css';
 import SignIn from './components/SignIn'
 import ChatRoom from './components/ChatRoom/ChatRoom'
@@ -9,7 +8,6 @@ import 'firebase/firestore'
 import 'firebase/auth'
 
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { useCollectionData } from 'react-firebase-hooks/firestore'
 
 var firebaseConfig = {
   apiKey: "AIzaSyAWyvUoCqJIFfQ7emDC8lowSinAmCrgH6w",
