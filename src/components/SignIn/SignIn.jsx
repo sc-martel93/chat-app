@@ -6,7 +6,9 @@ const SignIn = ({ signInWithGoogle }) => {
         color: "White",
         fontSize: "4rem",
         letterSpacing: "8px",
-        marginTop: "150px"
+        marginTop: "150px",
+        backgroundColor: "black",
+        width: "100%"
 
     }
     return (
