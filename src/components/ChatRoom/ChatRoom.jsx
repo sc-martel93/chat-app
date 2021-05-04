@@ -15,7 +15,7 @@ const ChatRoom = ({ firebase, firestore, auth, user }) => {
 
     useEffect(() => {
         if (dummy.current !== null)
-            setTimeout(function () { dummy.current.scrollIntoView({ behavior: 'smooth' }) }, 1000);
+            setTimeout(() => { dummy.current.scrollIntoView({ behavior: 'smooth' }) }, 1000);
     }, [])
 
     const SignOut = () => (

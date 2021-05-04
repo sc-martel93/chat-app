@@ -44,7 +44,7 @@ img {
       font-size: .8rem;
       display: flex;
       margin-right: 40px;
-      margin-left: 40px;
+      margin-left: 30px;
   }
 
  .timeStamp {
@@ -61,6 +61,6 @@ img {
   }
   
   .timeStamp span {
-      margin-left:10px;
+      margin-left:5px;
   }
 

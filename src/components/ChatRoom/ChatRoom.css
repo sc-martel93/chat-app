@@ -3,11 +3,11 @@
     flex-direction: column;
     justify-content: center;
     min-height: 100vh;
-    background-color: rgba(41, 33, 65, 0.45);
+    background-color:rgba(16,56,87, 0.75);
   }
 
 header {
-    background-color: #181717;
+    background-color: rgba(9,10,10, 0.9);
     height: 10vh;
     min-height: 50px;
     color: white;
@@ -67,7 +67,7 @@ input {
 }
 
 button {
-    background-color: rgba(59, 41, 107, 0.95);
+    background-color: rgb(42,82,110);
     border: 1px solid black;
     border-radius: 15px;
     color: white;
@@ -80,8 +80,8 @@ button {
 
 button:focus,
 button:hover {
-    background-color: rgba(79, 32, 207, 0.65);
-    color: yellow;
+    background-color: rgb(109,147,179);
+    color: black;
 }
 
 
