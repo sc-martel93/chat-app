@@ -37,19 +37,18 @@ img {
     margin: 2px 5px;
     color: grey;
     margin-right: 10px;
-    overflow-y: 24px;
   }
 
   .name {
       color: grey;
-      font-size: .9rem;
+      font-size: .8rem;
       display: flex;
-      margin-right: 7px;
-      margin-left: 3px;
+      margin-right: 40px;
+      margin-left: 45px;
   }
 
  .timeStamp {
-    font-size: .7rem;
+    font-size: .6rem;
     color: grey;
     display: flex;
     /* flex-direction: column; */
@@ -58,10 +57,10 @@ img {
   .timeStamp.sent {
       flex-direction: row;
       justify-content: flex-end;
-      margin-right: 7px;
+      margin-right: 10px;
   }
   
   .timeStamp span {
-      margin-left:3px;
+      margin-left:10px;
   }
 
