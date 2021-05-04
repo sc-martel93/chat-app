@@ -34,16 +34,23 @@ img {
     height: 40px;
     border-radius: 50%;
     margin: 2px 5px;
+    color: grey;
+    margin-right: 10px;
+    overflow-y: 24px;
   }
 
-
+  .name {
+      color: grey;
+      font-size: .9rem;
+      display: flex;
+      margin-top: 25px;
+  }
 
  .timeStamp {
     font-size: .7rem;
     color: grey;
     display: flex;
     /* flex-direction: column; */
-   
   }
 
   .timeStamp.sent {
@@ -55,3 +62,4 @@ img {
   .timeStamp span {
       margin-left:3px;
   }
+
