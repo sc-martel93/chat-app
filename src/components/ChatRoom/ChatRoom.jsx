@@ -43,7 +43,7 @@ const ChatRoom = ({ firebase, firestore, auth, user }) => {
     return (
         <div className="chatRoom">
             <header>
-                <h1 className="chatRoom--title">ChatBox</h1>
+                <h1 className="chatRoom--title">ChatBox <i class="fas fa-air-freshener"></i></h1>
                 <div className="headerBtns">
                     <button className="signOutBtn"><i class="fas fa-chevron-up"></i></button>
                     <button className="signOutBtn"><i class="fas fa-chevron-down"></i></button>
@@ -58,7 +58,7 @@ const ChatRoom = ({ firebase, firestore, auth, user }) => {
 
             <form onSubmit={sendMessage}>
                 <input value={formValue} onChange={e => setFormValue(e.target.value)} />
-                <button type="submit">Send</button>
+                <button type="submit"><i class="fas fa-rocket"></i></button>
             </form>
         </div>
     )
