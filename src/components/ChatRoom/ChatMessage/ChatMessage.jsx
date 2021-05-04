@@ -13,14 +13,15 @@ const ChatMessage = ({ message, auth, user }) => {
             <span className={`name ${messageClass}`}>
                 {user.displayName}
             </span>
-            <div className={`message ${messageClass}`}>
-                <img src={photoURL} alt=' ><' />
-                <p>{text}</p>
-            </div>
             <div className={`timeStamp ${messageClass}`}>
                 <span>{date && date.toDateString()}</span>
                 <span>{date && date.toLocaleTimeString()}</span>
             </div>
+            <div className={`message ${messageClass}`}>
+                <img src={photoURL} alt=' ><' />
+                <p>{text}</p>
+            </div>
+
         </div >
 
     )
