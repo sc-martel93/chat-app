@@ -1,5 +1,5 @@
 import './App.css';
-import SignIn from './components/SignIn'
+import SignIn from './components/SignIn/SignIn'
 import ChatRoom from './components/ChatRoom/ChatRoom'
 
 import firebase from 'firebase/app';

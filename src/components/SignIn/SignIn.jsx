@@ -5,6 +5,7 @@ const SignIn = ({ signInWithGoogle }) => {
     const styles = {
         color: "White",
         fontSize: "4rem",
+        letterSpacing: "8px",
         marginTop: "150px"
 
     }

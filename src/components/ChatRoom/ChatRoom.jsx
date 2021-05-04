@@ -43,7 +43,7 @@ const ChatRoom = ({ firebase, firestore, auth, user }) => {
     return (
         <div className="chatRoom">
             <header>
-                <h1 className="chatRoom--title">Chat Room</h1>
+                <h1 className="chatRoom--title">ChatBox</h1>
                 <SignOut />
             </header>
 
