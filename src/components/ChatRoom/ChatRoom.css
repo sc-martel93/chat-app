@@ -4,7 +4,7 @@
     justify-content: center;
     min-height: 100vh;
     background-color:rgba(16,56,87, 0.75);
-  }
+}
 
 header {
     background-color: rgba(9,10,10, 0.9);
@@ -21,13 +21,8 @@ header {
     z-index: 99;
     padding: 10px;
     box-sizing: border-box;
-  }
-  
-  .headerBtns {
-    display: flex;
     
-
-  }
+}
 
 .chatRoom--title {
     letter-spacing: 3px;
@@ -36,7 +31,7 @@ header {
 main {
     padding: 10px;
     height: 80vh;
-    margin: 10vh 0 10vh;
+    margin: 15vh 0 10vh 0 ;
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
@@ -52,8 +47,7 @@ main {
     
 ::-webkit-scrollbar-thumb {
     background: rgb(62,114,152);
-}
-    
+}  
 
 form {
     position: fixed;
@@ -101,5 +95,5 @@ button:hover {
 button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
-  }
+}
 

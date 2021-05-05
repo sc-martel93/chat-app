@@ -66,7 +66,7 @@ const ChatRoom = ({ firebase, firestore, auth }) => {
             <main>
                 <div ref={top}></div>
                 {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} auth={auth} />)}
-                <div ref={bottom}></div>
+                <div ref={bottom} />
             </main>
 
             <form onSubmit={sendMessage}>

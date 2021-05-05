@@ -7,7 +7,6 @@ const ChatMessage = ({ message, auth }) => {
     let messageClass = uid === auth.currentUser.uid ? 'sent' : 'received'
     let date = message.createdAt && message.createdAt.toDate();
 
-    console.log(displayName);
     return (
         <div className="container">
             <span className={`name ${messageClass}`}>
@@ -18,7 +17,7 @@ const ChatMessage = ({ message, auth }) => {
                 <span>{date && date.toLocaleTimeString()}</span>
             </div>
             <div className={`message ${messageClass}`}>
-                <img src={photoURL} alt=' ><' />
+                <img src={photoURL} alt="><" />
                 <p>{text}</p>
             </div>
 
