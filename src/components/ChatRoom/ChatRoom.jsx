@@ -29,17 +29,15 @@ const ChatRoom = ({ firebase, firestore, auth, user }) => {
 
     const sendMessage = async (e) => {
         e.preventDefault()
-
+        if (formValue === "") return
         const { uid, photoURL } = auth.currentUser
 
-        if (formValue !== "") {
-            await messagesRef.add({
-                text: formValue,
-                createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-                uid,
-                photoURL
-            })
-        }
+        await messagesRef.add({
+            text: formValue,
+            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+            uid,
+            photoURL
+        })
 
 
         setFormValue('')
@@ -52,13 +50,13 @@ const ChatRoom = ({ firebase, firestore, auth, user }) => {
     return (
         <div className="chatRoom">
             <header>
-                <h1 className="chatRoom--title">ChatBox <i className="fas fa-air-freshener"></i></h1>
+                <h1 className="chatRoom--title">ChatBox <i className="fas fa-air-freshener" /></h1>
                 <div className="headerBtns">
                     <button className="headerBtn" onClick={() => toTopOfPage()} >
-                        <i className="fas fa-chevron-up"></i>
+                        <i className="fas fa-chevron-up" />
                     </button>
                     <button className="headerBtn" onClick={() => toBottomOfPage()}>
-                        <i className="fas fa-chevron-down"></i>
+                        <i className="fas fa-chevron-down" />
                     </button>
                     <SignOut />
                 </div>
@@ -72,7 +70,7 @@ const ChatRoom = ({ firebase, firestore, auth, user }) => {
 
             <form onSubmit={sendMessage}>
                 <input value={formValue} onChange={e => setFormValue(e.target.value)} />
-                <button type="submit"><i className="fas fa-rocket"></i></button>
+                <button type="submit"><i className="fas fa-rocket" /></button>
             </form>
         </div>
     )

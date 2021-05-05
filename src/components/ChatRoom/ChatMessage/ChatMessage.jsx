@@ -7,6 +7,7 @@ const ChatMessage = ({ message, auth, user }) => {
     let messageClass = uid === auth.currentUser.uid ? 'sent' : 'received'
     let date = message.createdAt && message.createdAt.toDate();
 
+    console.log(auth.currentUser.displayName);
     return (
         <div className="test">
             <span className={`name ${messageClass}`}>
