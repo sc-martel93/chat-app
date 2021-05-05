@@ -1,0 +1,23 @@
+.title {
+    color: white;
+    font-size: 4rem;
+    letter-spacing: 8px;
+    margin-top: 150px;
+    background-color: black;
+    width: 100%;
+}
+
+h3 {
+    color: white;
+}
+
+.buttons {
+    margin: 20vh auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.buttons button {
+    margin-bottom: 25px;
+}

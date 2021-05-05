@@ -1,33 +1,30 @@
 import React, { useEffect } from 'react'
 
+import './SignIn.css'
+
 const SignIn = ({ signInWithGoogle, signInAnon }) => {
 
 
     useEffect(() => { window.scrollTo(0, 0) }, [])
 
     const styles = {
-        color: "White",
-        fontSize: "4rem",
-        letterSpacing: "8px",
-        marginTop: "150px",
-        backgroundColor: "black",
-        width: "100%"
 
     }
     return (
         <div>
-            <h1 style={styles}>ChatBox</h1>
-            <h3 style={{ color: "white" }}>Scott Martel</h3>
-            <button
-                style={{ marginTop: '20vh' }}
-                onClick={signInWithGoogle}>
-                Sign in with <i className="fab fa-google"></i>oogle
+            <h1 className="title">ChatBox</h1>
+            <h3>Scott Martel</h3>
+            <div className="buttons">
+                <button
+                    onClick={signInWithGoogle}>
+                    Sign in with <i className="fab fa-google" />oogle
             </button>
-            <button
-                style={{}}
-                onClick={signInAnon}>
-                Sign in Anon
-            </button>
+                <button
+                    onClick={signInAnon}>
+                    Anonymous <i class="fas fa-theater-masks" />
+                </button>
+            </div>
+
         </div>
     )
 }
