@@ -24,6 +24,10 @@ header {
     
 }
 
+.top {
+    margin-top: 2vh;
+}
+
 .chatRoom--title {
     letter-spacing: 3px;
 }
