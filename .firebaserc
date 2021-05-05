@@ -1,5 +1,17 @@
 {
   "projects": {
     "default": "chat-app-cd6c7"
+  },
+  "targets": {
+    "chat-app-cd6c7": {
+      "hosting": {
+        "production": [
+          "chat-app-cd6c7"
+        ],
+        "staging": [
+          "chat-app-cd6c7-staging"
+        ]
+      }
+    }
   }
 }
