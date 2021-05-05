@@ -4,7 +4,7 @@ import { useCollectionData } from 'react-firebase-hooks/firestore'
 import ChatMessage from './ChatMessage/ChatMessage'
 import './ChatRoom.css'
 
-const ChatRoom = ({ firebase, firestore, auth, user }) => {
+const ChatRoom = ({ firebase, firestore, auth }) => {
     const messagesRef = firestore.collection('messages')
     const query = messagesRef.orderBy('createdAt').limit(25)
 
@@ -65,7 +65,7 @@ const ChatRoom = ({ firebase, firestore, auth, user }) => {
 
             <main>
                 <div ref={top}></div>
-                {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} auth={auth} user={user} />)}
+                {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} auth={auth} />)}
                 <div ref={bottom}></div>
             </main>
 

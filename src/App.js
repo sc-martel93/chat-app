@@ -42,7 +42,6 @@ function App() {
             firebase={firebase}
             firestore={firestore}
             auth={auth}
-            user={user}
           />
           : <SignIn
             signInWithGoogle={signInWithGoogle}
