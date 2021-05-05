@@ -30,15 +30,16 @@ const ChatRoom = ({ firebase, firestore, auth, user }) => {
     const sendMessage = async (e) => {
         e.preventDefault()
         if (formValue === "") return
-        const { uid, photoURL } = auth.currentUser
+
+        const { uid, photoURL, displayName } = auth.currentUser
 
         await messagesRef.add({
             text: formValue,
             createdAt: firebase.firestore.FieldValue.serverTimestamp(),
             uid,
-            photoURL
+            photoURL,
+            displayName
         })
-
 
         setFormValue('')
         bottom.current.scrollIntoView({ behavior: 'smooth' })

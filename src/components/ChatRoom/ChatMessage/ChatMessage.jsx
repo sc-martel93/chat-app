@@ -1,17 +1,17 @@
 import React from 'react'
 import './ChatMessage.css'
 
-const ChatMessage = ({ message, auth, user }) => {
-    const { text, uid, photoURL } = message
+const ChatMessage = ({ message, auth }) => {
+    const { text, uid, photoURL, displayName } = message
 
     let messageClass = uid === auth.currentUser.uid ? 'sent' : 'received'
     let date = message.createdAt && message.createdAt.toDate();
 
-    console.log(auth.currentUser.displayName);
+    console.log(displayName);
     return (
-        <div className="test">
+        <div className="container">
             <span className={`name ${messageClass}`}>
-                {user.displayName !== null ? user.displayName : "Anon"}
+                {displayName !== null ? displayName : "Anonymous"}
             </span>
             <div className={`timeStamp ${messageClass}`}>
                 <span>{date && date.toDateString()}</span>
