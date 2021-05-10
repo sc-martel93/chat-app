@@ -19,7 +19,7 @@ const ChatMessage = ({ message, auth }) => {
             </div>
             <div className={`message ${messageClass}`}>
                 {photoURL ?
-                    <img src={photoURL} alt="user" />
+                    <img src={photoURL} alt="User" />
                     :
                     <img src={anonUserPic} alt="Anon" />
                 }
