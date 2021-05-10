@@ -1,5 +1,6 @@
 import React from 'react'
 import './ChatMessage.css'
+import anonUserPic from "../../../images/anonymous-user-icon.jpg"
 
 const ChatMessage = ({ message, auth }) => {
     const { text, uid, photoURL, displayName } = message
@@ -17,7 +18,11 @@ const ChatMessage = ({ message, auth }) => {
                 <span>{date && date.toLocaleTimeString()}</span>
             </div>
             <div className={`message ${messageClass}`}>
-                <img src={photoURL} alt="><" />
+                {photoURL ?
+                    <img src={photoURL} alt="user" />
+                    :
+                    <img src={anonUserPic} alt="Anon" />
+                }
                 <p>{text}</p>
             </div>
 
