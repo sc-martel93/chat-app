@@ -2,7 +2,7 @@
 A real time chat application created using React js and Google firebase. It allows users to sign in with either
 their google account or anonymously to send and receive messages in the chatroom. 
 
-Link to deployed app
+### Link to deployed app
 https://chat-app-cd6c7.web.app/
 
 
